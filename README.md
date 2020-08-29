@@ -8,4 +8,6 @@ Instructions:
 4. Run npm start
 5. Visit localhost:8080
 
+To run in debug mode, simply hit F5
+
 You should have a simple express js app running, you can now edit the code in the src folder, and see it reflect in your browser.
