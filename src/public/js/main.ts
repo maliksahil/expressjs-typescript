@@ -1,0 +1,1 @@
+console.log('client side scripting support');
