@@ -4,14 +4,25 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ExpressJS TypeScript starter template</title>
-
-    <%- include('partials/common') %>
+    <title>Todo application</title>    
 </head>
 
 <body>
     <%- include('partials/header') %>
-    <h1>Home Page</h1>
+    <h1>My Todos</h1>
+
+    <div class="container-fluid px-lg-5" id="app">
+        <div class="row" v-for="todo in todos">
+            <div class="card shadow col-lg-12 col px-lg-5">
+                <div class="card-body">
+                    <span v-if="todo.isDone">✅</span>
+                    <span v-else>❌</span>
+                    {{todo.id}} : {{todo.title}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/common') %>
     <%- include('partials/footer') %>
 </body>
 
