@@ -5,5 +5,7 @@ export class Todo {
 
     constructor(props: Todo){
         Object.assign(this, props)
+        this.isDone = (this as any).isdone;
+        delete (this as any).isdone;
     }
 }
