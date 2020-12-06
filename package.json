@@ -12,7 +12,9 @@
     "copy-assets": "ts-node tools/copyAssets",
     "tsc": "tsc",
     "clean": "rimraf dist/*",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "parcelnode": "parcel build main src/index.ts -o dist/index.js --target node --bundle-node-modules",
+    "buildprod": "npm-run-all clean lint parcel parcelnode copy-assets"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -41,7 +43,8 @@
     "typescript": "^3.9.7"
   },
   "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+    "vue": "./node_modules/vue/dist/vue.common.js",
+    "pg-native": "./aliases/pg-native.js"
   },
   "keywords": [],
   "author": "",
